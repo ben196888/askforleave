@@ -50,7 +50,9 @@ exports = module.exports = function(app, passport){
 	app.get('/logout/', require('./views/logout').init);
 	// social login
 
-	app.get('/account/', function(req, res){res.send(req.user);});
-	// app.get('/account/', require('./views/account').init);
+	// app.get('/account/', function(req, res){res.send(req.user);});
+	app.get('/account/', require('./views/account/index').init);
+	// app.get('/account/:id/leave', require('./views/account/index').show);
+	// app.post('/account/:id/leave', require('./views/account/index').create);
 	app.get('/account/profile', function(req, res){res.send("profile");});
 };
